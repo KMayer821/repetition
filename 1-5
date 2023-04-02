@@ -1,0 +1,18 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main()
+        {
+            int health = 100;
+            int mana = 200;
+            int buffer;
+
+            buffer = health;
+            health = mana;
+            mana = buffer;
+        }
+    }
+}
