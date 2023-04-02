@@ -1,0 +1,20 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ваше имя: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Сколько вам лет? ");
+            string age = Console.ReadLine();
+            Console.WriteLine("Где вы работаете?");
+            string profession = Console.ReadLine();
+            Console.WriteLine("Где вы хотите работать?");
+            string dreamProfession = Console.ReadLine();
+            Console.WriteLine($"Правильно я понимаю, что вы {name} вам {age} вы рабоаете {profession}, а хотели бы быть {dreamProfession}?");
+        }
+    }
+}
