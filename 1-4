@@ -1,0 +1,17 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int numberOfImages = 52;
+            int imagesInRaw = 3;
+            int remaines = numberOfImages % imagesInRaw;
+            int result = numberOfImages / imagesInRaw;
+
+            Console.WriteLine($"Всего строк: {result}, остаток: {remaines}");
+        }
+    }
+}
