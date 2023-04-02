@@ -1,0 +1,19 @@
+namespace FirstApp
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            bool isAlive;
+            string characterName;
+            char classSymbol;
+            uint money;
+            byte healthMaximum;
+            float multiplyCoefficient;
+            decimal mapCoordinates;
+            ushort numberOfMaximumPlayers;
+            ulong homeWeigth;
+        }
+    }
+}
