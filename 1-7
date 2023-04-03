@@ -1,0 +1,22 @@
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int numberOfPeopleInQueue;
+            int timeForOnePerson = 10;
+            int minutesInHour = 60;
+            int minutes;
+            int hours;
+
+            Console.WriteLine("Введите количество старушек: ");
+            numberOfPeopleInQueue = Convert.ToInt32(Console.ReadLine());
+            minutes = numberOfPeopleInQueue * timeForOnePerson;
+            hours = minutes / 60;
+            minutes = minutes % 60;
+            Console.WriteLine($"Вы должны отстоять {hours} и {minutes} минут");
+        }
+    }
+}
