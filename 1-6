@@ -1,0 +1,23 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int crystalCoast = 50;
+            int playerMoney;
+            int playerCrystals;
+            int playerRequest;
+            
+            Console.WriteLine("Сколько у вас золота?");
+            playerMoney = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Сколько кристаллов вы хотите купить? ");
+            playerRequest = Convert.ToInt32(Console.ReadLine());
+            playerCrystals = playerRequest;
+            playerMoney -= playerRequest * crystalCoast;
+            Console.WriteLine($"У вас {playerMoney} золота и {playerCrystals} кристаллов");
+        }
+    }
+}
