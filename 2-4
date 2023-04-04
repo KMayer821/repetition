@@ -1,0 +1,31 @@
+using System;
+using System.IO.IsolatedStorage;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(0, 15);
+            int firstCoefficient = 3;
+            int secondCoefficient = 5;
+            int sum = 0;
+
+            for (int i = randomNumber; i> 0 ; i--)
+            {
+                if (i % firstCoefficient == 0)
+                {
+                    sum += i;
+                }
+                else if (i % secondCoefficient == 0)
+                {
+                    sum += i;
+                }
+            }
+            Console.WriteLine(randomNumber);
+            Console.WriteLine(sum);
+        }
+    }
+}
