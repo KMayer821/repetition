@@ -6,6 +6,10 @@ namespace App
     {
         static void Main(string[] args)
         {
+            int cycleBegining = 5;
+            int cycleEnding = 5;
+            int cycleStep = 5;
+
             for (int i = 5; i < 100; i += 7)
             {
                 Console.WriteLine(i);
