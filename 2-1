@@ -8,10 +8,12 @@ namespace App
         {
             Console.WriteLine("Сколько раз повторить код?");
             int numberOfRepetition = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Фраза для вывода:");
+            string userPhrase = Console.ReadLine();
 
             for (int i = 0; i < numberOfRepetition; i++)
             {
-                Console.WriteLine(i+1);
+                Console.WriteLine("\n" + userPhrase);
             }
         }
     }
