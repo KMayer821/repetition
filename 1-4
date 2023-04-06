@@ -8,10 +8,10 @@ namespace App
         {
             int numberOfImages = 52;
             int imagesInRaw = 3;
-            int remaines = numberOfImages % imagesInRaw;
-            int result = numberOfImages / imagesInRaw;
+            int remainesOfRaws = numberOfImages % imagesInRaw;
+            int numberOfRaws = numberOfImages / imagesInRaw;
 
-            Console.WriteLine($"Всего строк: {result}, остаток: {remaines}");
+            Console.WriteLine($"Всего строк: {numberOfRaws}, остаток: {remainesOfRaws}");
         }
     }
 }
