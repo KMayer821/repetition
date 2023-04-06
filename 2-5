@@ -1,0 +1,54 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            string exitWord = "выход";
+            string name = "";
+            string surname = "";
+            Console.WriteLine("Для выхода напишите выход");
+            Console.WriteLine("Для ввода имени напишите имя");
+            Console.WriteLine("Для фамилии напишите фамилия");
+            Console.WriteLine("Для смены имени напишите смена имени");
+            Console.WriteLine("Для вывода информации напшиите инфо");
+            string userInput = "";
+
+            while (userInput != exitWord)
+            {
+                userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "имя":
+                        Console.WriteLine("Выбор имени");
+                        name = Console.ReadLine();
+                        break;
+                    case "смена имени":
+                        Console.WriteLine("Введите имени");
+                        name = Console.ReadLine();
+                        break;
+                    case "фамилия":
+                        Console.WriteLine("Введите фамилию");
+                        surname = Console.ReadLine();
+                        break;
+                    case "инфо":
+                        if (name == "" || surname == "")
+                        {
+                            Console.WriteLine("Вы ввели не все данные о себе");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine(name + " " + surname);
+                            break;
+                        }
+                    default:
+                        Console.WriteLine("Таких команд нет");
+                        break;
+                }
+            }
+        }
+    }
+}
