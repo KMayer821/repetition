@@ -16,8 +16,8 @@ namespace App
             Console.WriteLine("Введите количество старушек: ");
             numberOfPeopleInQueue = Convert.ToInt32(Console.ReadLine());
             minutesForWaiting = numberOfPeopleInQueue * timeForOnePerson;
-            hoursForWaiting = minutesForWaiting / 60;
-            minutesForWaiting = totalMinutes % 60;
+            hoursForWaiting = minutesForWaiting / minutesInHour;
+            minutesForWaiting = totalMinutes % minutesInHour;
             Console.WriteLine($"Вы должны отстоять {hoursForWaiting} и {minutesForWaiting} минут");
         }
     }
