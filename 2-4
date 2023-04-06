@@ -8,22 +8,21 @@ namespace App
         static void Main(string[] args)
         {
             Random random = new Random();
-            int randomNumber = random.Next(0, 15);
+            int minimalRandomNumber = 0;
+            int maximumRandomNumber = 100;
             int firstCoefficient = 3;
             int secondCoefficient = 5;
             int sum = 0;
+            int randomNumber = random.Next(minimalRandomNumber, maximumRandomNumber);
 
             for (int i = randomNumber; i> 0 ; i--)
             {
-                if (i % firstCoefficient == 0)
-                {
-                    sum += i;
-                }
-                else if (i % secondCoefficient == 0)
+                if (i % firstCoefficient == 0 || i % secondCoefficient == 0)
                 {
                     sum += i;
                 }
             }
+
             Console.WriteLine(randomNumber);
             Console.WriteLine(sum);
         }
