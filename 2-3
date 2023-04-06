@@ -6,11 +6,11 @@ namespace App
     {
         static void Main(string[] args)
         {
-            int cycleBegining = 5;
-            int cycleEnding = 100;
-            int cycleStep = 7;
+            int sequenceBegining = 5;
+            int sequenceEnding = 100;
+            int sequenceStep = 7;
 
-            for (int i = cycleBegining; i < cycleEnding; i += cycleStep)
+            for (int i = sequenceBegining; i < sequenceEnding; i += sequenceStep)
             {
                 Console.WriteLine(i);
             }
