@@ -7,10 +7,10 @@ namespace App
         static void Main(string[] args)
         {
             int cycleBegining = 5;
-            int cycleEnding = 5;
-            int cycleStep = 5;
+            int cycleEnding = 100;
+            int cycleStep = 7;
 
-            for (int i = 5; i < 100; i += 7)
+            for (int i = cycleBegining; i < cycleEnding; i += cycleStep)
             {
                 Console.WriteLine(i);
             }
