@@ -1,0 +1,65 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int userUSD = 100;
+            int userJPY = 0;
+            int userEUR = 0;
+            int convertUSDtoJPY = 2;
+            int convertJPYtoEUR = 2;
+            int convertUSDtoEUR = 4;
+            string exitWord = "exit";
+            string USDtoJPYword = "U to J";
+            string USDtoEURword = "U to E";
+            string EURtoJPYword = "E to J";
+            string EURtoUSDword = "E to U";
+            string JPYtoEURword = "J to E";
+            string JPYtoUSDword = "J to U";
+            int buingCurrency = 0;
+            Console.WriteLine("Паримеры команд U to J, E to U и так далее");
+            string userInput = "";
+
+            while (userInput != exitWord)
+            {
+                Console.WriteLine($"У вас {userUSD} долларов, {userJPY} йен и {userEUR} евро");
+                userInput = Console.ReadLine();
+                buingCurrency = Convert.ToInt32(Console.ReadLine());
+
+                if (userInput == USDtoJPYword)
+                {
+                    userJPY += buingCurrency;
+                    userUSD -= buingCurrency * convertUSDtoJPY;
+                }
+                if (userInput == USDtoEURword)
+                {
+                    userEUR += buingCurrency;
+                    userUSD -= buingCurrency * convertUSDtoEUR;
+                }
+                if (userInput == EURtoJPYword)
+                {
+                    userEUR += buingCurrency;
+                    userJPY -= buingCurrency / convertJPYtoEUR;
+                }
+                if (userInput == EURtoUSDword)
+                {
+                    userUSD += buingCurrency;
+                    userEUR -= buingCurrency / convertUSDtoEUR;
+                }
+                if (userInput == JPYtoEURword)
+                {
+                    userEUR += buingCurrency;
+                    userJPY -= buingCurrency * convertJPYtoEUR;
+                }
+                if (userInput == JPYtoUSDword)
+                {
+                    userUSD += buingCurrency;
+                    userJPY -= buingCurrency / convertUSDtoJPY;
+                }
+            }
+        }
+    }
+}
