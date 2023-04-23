@@ -1,0 +1,54 @@
+using System;
+using System.Linq.Expressions;
+using System.Xml;
+
+namespace app
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            string name = "";
+            string password = "";
+            string exitWord = "exit";
+            string setNameWord = "set name";
+            string setPasswordWord = "set passwd";
+            string changePasswordWord = "change passwd";
+            string changeNameWord = "change name";
+            string showInformationWord = "info";
+            Console.WriteLine($"Введите одну из следующих команд: {showInformationWord}, {setNameWord}, {setPasswordWord}, {changePasswordWord}, {changeNameWord}");
+            Console.WriteLine($"Для выхода введите {exitWord}");
+            string userInput = "";
+
+            while (userInput != exitWord)
+            {
+                userInput = Console.ReadLine();
+
+                if (userInput == setNameWord)
+                {
+                    name = Console.ReadLine();
+                    Console.WriteLine("Успех");
+                }
+                if (userInput == setPasswordWord)
+                {
+                    password = Console.ReadLine();
+                    Console.WriteLine("Успех");
+                }
+                if (userInput == changePasswordWord)
+                {
+                    password = Console.ReadLine();
+                    Console.WriteLine("Успех");
+                }
+                if (userInput == changeNameWord)
+                {
+                    name = Console.ReadLine();
+                    Console.WriteLine("Успех");
+                }
+                if (userInput == showInformationWord)
+                {
+                    Console.WriteLine($"Ваше имя: {name}, ваш пароль {password}");
+                }
+            }
+        }
+    }
+}
