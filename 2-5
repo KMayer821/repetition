@@ -26,7 +26,7 @@ namespace App
                         name = Console.ReadLine();
                         break;
                     case "смена имени":
-                        Console.WriteLine("Введите имени");
+                        Console.WriteLine("Введите имя");
                         name = Console.ReadLine();
                         break;
                     case "фамилия":
