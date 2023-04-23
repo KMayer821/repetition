@@ -1,0 +1,46 @@
+using System;
+using System.Security.Claims;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            string brackets = "(()(()())";
+            char openBracket = '(';
+            char closedBracket = ')';
+            int bracketsDeep = 0;
+            int maximumBracketsDeep = 0;
+
+            foreach (var symbol in brackets)
+            {
+                if (symbol == openBracket)
+                {
+                    bracketsDeep += 1;
+                }
+                else
+                {
+                    bracketsDeep -= 1;
+                }
+                if (bracketsDeep > maximumBracketsDeep)
+                {
+                    maximumBracketsDeep = bracketsDeep;
+                }
+                if (bracketsDeep < 0)
+                {
+                    Console.WriteLine("Строка не верна");
+                    break;
+                }
+            }
+            
+            Console.WriteLine("Максимальная вложенность: " + maximumBracketsDeep);
+            
+            if (bracketsDeep > 0)
+            {
+                Console.WriteLine("Строка не верна");
+            }
+        }
+    }
+}
