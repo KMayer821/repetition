@@ -1,0 +1,31 @@
+using System;
+using System.Security.Claims;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int minimalRandomNumber = 1;
+            int maximumRandomNumber = 100;
+            int randomNumber = random.Next(minimalRandomNumber, maximumRandomNumber);
+            int degreeOfTwo = 1;
+            int multiplier = 2;
+            Console.WriteLine(randomNumber);
+
+            while (true)
+            {
+                degreeOfTwo *= multiplier;
+
+                if (degreeOfTwo > randomNumber)
+                {
+                    break;
+                }
+            }
+
+            Console.WriteLine(degreeOfTwo);
+        }
+    }
+}
