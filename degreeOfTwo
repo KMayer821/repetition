@@ -11,21 +11,18 @@ namespace App
             int minimalRandomNumber = 1;
             int maximumRandomNumber = 100;
             int randomNumber = random.Next(minimalRandomNumber, maximumRandomNumber);
-            int degreeOfTwo = 1;
+            int degreeOfNumber = 1;
+            int degree = 0;
             int multiplier = 2;
             Console.WriteLine(randomNumber);
 
-            while (true)
+            while (degreeOfNumber < randomNumber)
             {
-                degreeOfTwo *= multiplier;
-
-                if (degreeOfTwo > randomNumber)
-                {
-                    break;
-                }
+                degreeOfNumber *= multiplier;
+                degree++;
             }
 
-            Console.WriteLine(degreeOfTwo);
+            Console.WriteLine(degreeOfNumber + " " + degree);
         }
     }
 }
