@@ -11,7 +11,7 @@ namespace App
             Console.WriteLine("Введите символ");
             string userSymbol = Console.ReadLine();
             int rowLength = userName.Length + 2;
-            string firstAndLastString = "";
+            string horizontalFrame = "";
 
             for (int i = 0; i < rowLength; i++)
             {
