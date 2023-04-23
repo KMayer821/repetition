@@ -1,0 +1,62 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int userHealth = 100;
+            int bossHealth = 200;
+            int bossDamage;
+            int maximumBossDamage = 20;
+            int minimumBossDamage = 5;
+            int standartUserFireDamage = 20;
+            int currentUserFireDamage;
+            int userDamageMultiplier = 3;
+            bool isBossInOil = false;
+            bool isConcentrated = false;
+            string userInput;
+            string fireBall = "огонь";
+            string oilBall = "масло";
+            string concentration = "концентрация";
+            Console.WriteLine($"Ваши заклинания: {fireBall} {oilBall} {concentration}");
+
+            while (userHealth > 0 && bossHealth > 0)
+            {
+                bossDamage = random.Next(minimumBossDamage, maximumBossDamage);
+                userInput = Console.ReadLine();
+                currentUserFireDamage = standartUserFireDamage;
+
+                if (userInput == fireBall)
+                {
+                    if (isBossInOil == true)
+                    {
+                        currentUserFireDamage *= userDamageMultiplier;
+                        isBossInOil = false;
+                    }
+                    if (isConcentrated == true)
+                    {
+                        currentUserFireDamage *= userDamageMultiplier;
+                        isConcentrated = false;
+                    }
+
+                    Console.WriteLine($"Вы нанесли {currentUserFireDamage}");
+                    bossHealth -= currentUserFireDamage;
+                }
+                if (userInput == oilBall)
+                {
+                    isBossInOil = true;
+                }
+                if (userInput == concentration)
+                {
+                    isConcentrated = true;
+                }
+                userHealth -= bossDamage;
+
+                Console.WriteLine($"Ваше здоровье: {userHealth}, здоровье босса: {bossHealth}");
+            }
+        }
+    }
+}
