@@ -1,0 +1,26 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите имя:");
+            string userName = Console.ReadLine();
+            Console.WriteLine("Введите символ");
+            string userSymbol = Console.ReadLine();
+            int rowLength = userName.Length + 2;
+            string firstAndLastString = "";
+
+            for (int i = 0; i < rowLength; i++)
+            {
+                firstAndLastString += userSymbol;
+            }
+
+            Console.WriteLine(firstAndLastString);
+            Console.WriteLine(userSymbol + userName + userSymbol);
+            Console.WriteLine(firstAndLastString);
+        }
+    }
+}
