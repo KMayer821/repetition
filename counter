@@ -1,0 +1,29 @@
+using System;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int minimalRandomNumber = 1;
+            int maximumRandomNumber = 27;
+            int randomNumber = random.Next(minimalRandomNumber, maximumRandomNumber);
+            int countOfNumbers = 0;
+            int beginOfSpan = 100;
+            int endOfSpan = 999;
+            Console.WriteLine(randomNumber);
+
+            for (int i = randomNumber; i < endOfSpan; i += randomNumber)
+            {
+                if (i > beginOfSpan)
+                {
+                    countOfNumbers++;
+                }
+            }
+
+            Console.WriteLine(countOfNumbers);
+        }
+    }
+}
