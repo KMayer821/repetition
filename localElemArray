@@ -1,0 +1,50 @@
+using System;
+using System.Security.Claims;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int arraySize = 30;
+            Random random = new Random();
+            int minimumArrayEllement = 2;
+            int maximumArrayEllement = 10;
+            int[] array = new int[arraySize];
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                array[i] = random.Next(minimumArrayEllement, maximumArrayEllement);
+                Console.Write(array[i] + " ");
+            }
+
+            Console.WriteLine("\n\n");
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                if (i == 0)
+                {
+                    if (array[i] > array[i + 1])
+                    {
+                        Console.WriteLine(array[i]);
+                    }
+                }
+                else if (i == arraySize - 1)
+                {
+                    if (array[i] > array[i - 1])
+                    {
+                        Console.WriteLine(array[i]);
+                    }
+                }
+                else 
+                {
+                    if (array[i] > array[i - 1] && array[i] > array[i+1])
+                    {
+                        Console.WriteLine(array[i]);
+                    }
+                }
+            }
+        }
+    }
+}
