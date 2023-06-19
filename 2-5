@@ -6,6 +6,10 @@ namespace App
     {
         static void Main(string[] args)
         {
+            const string Name = "имя";
+            const string ChangeName = "смена имени";
+            const string SecondName = "фамилия";
+            const string Info = "инфо";
             string exitWord = "выход";
             string name = "";
             string surname = "";
@@ -21,19 +25,19 @@ namespace App
                 userInput = Console.ReadLine();
                 switch (userInput)
                 {
-                    case "имя":
+                    case Name:
                         Console.WriteLine("Выбор имени");
                         name = Console.ReadLine();
                         break;
-                    case "смена имени":
+                    case ChangeName:
                         Console.WriteLine("Введите имя");
                         name = Console.ReadLine();
                         break;
-                    case "фамилия":
+                    case SecondName:
                         Console.WriteLine("Введите фамилию");
                         surname = Console.ReadLine();
                         break;
-                    case "инфо":
+                    case Info:
                         if (name == "" || surname == "")
                         {
                             Console.WriteLine("Вы ввели не все данные о себе");
