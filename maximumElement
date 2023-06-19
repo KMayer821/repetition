@@ -8,17 +8,17 @@ namespace App
         static void Main(string[] args)
         {
             int matrixSize = 10;
-            int[,] array = new int[matrixSize,matrixSize];
+            int[,] numbers = new int[matrixSize, matrixSize];
             Random random = new Random();
             int minimumRandomNumber = 1;
             int maximumRandomNumber = 10;
-            int maximumElementOfMatrix = 0;
+            int maximumElementOfMatrix = minimumRandomNumber;
 
             for (int i = 0; i < matrixSize; i++)
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    array[i,j] = random.Next(minimumRandomNumber, maximumRandomNumber);
+                    numbers[i, j] = random.Next(minimumRandomNumber, maximumRandomNumber);
                 }
             }
 
@@ -26,11 +26,11 @@ namespace App
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    Console.Write(array[i,j] + " ");
+                    Console.Write(numbers[i, j] + " ");
 
-                    if (array[i,j] > maximumElementOfMatrix)
+                    if (numbers[i, j] > maximumElementOfMatrix)
                     {
-                        maximumElementOfMatrix = array[i,j];
+                        maximumElementOfMatrix = numbers[i, j];
                     }
                 }
                 Console.WriteLine();
@@ -42,12 +42,12 @@ namespace App
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    if (array[i, j] == maximumElementOfMatrix)
+                    if (numbers[i, j] == maximumElementOfMatrix)
                     {
-                        array[i, j] = 0;
+                        numbers[i, j] = 0;
                     }
 
-                    Console.Write(array[i,j] + " ");
+                    Console.Write(numbers[i, j] + " ");
                 }
                 Console.WriteLine();
             }
