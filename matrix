@@ -8,7 +8,7 @@ namespace App
         static void Main(string[] args)
         {
             int matrixSize = 4;
-            int[,] array = new int[matrixSize,matrixSize];
+            int[,] numbers = new int[matrixSize, matrixSize];
             Random random = new Random();
             int minimumRandomNumber = 1;
             int maximumRandomNumber = 9;
@@ -21,7 +21,7 @@ namespace App
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    array[i,j] = random.Next(minimumRandomNumber, maximumRandomNumber);
+                    numbers[i, j] = random.Next(minimumRandomNumber, maximumRandomNumber);
                 }
             }
 
@@ -29,16 +29,23 @@ namespace App
             {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    if (i == rowNumber-1)
+                    if (i == rowNumber - 1)
                     {
-                        summResult += array[i, j];
+                        summResult += numbers[i, j];
                     }
-                    if (j == columnNumber-1)
+                }
+            }
+            
+            for (int i = 0; i < matrixSize; i++)
+            {
+                for (int j = 0; j < matrixSize; j++)
+                {
+                    if (j == columnNumber - 1)
                     {
-                        multiplyResult *= array[i, j];
+                        multiplyResult *= numbers[i, j];
                     }
 
-                    Console.Write(array[i,j] + " ");
+                    Console.Write(numbers[i, j] + " ");
                 }
                 Console.WriteLine();
             }
