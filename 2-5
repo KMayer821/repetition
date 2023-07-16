@@ -6,50 +6,47 @@ namespace App
     {
         static void Main(string[] args)
         {
-            const string Name = "имя";
-            const string ChangeName = "смена имени";
-            const string SecondName = "фамилия";
-            const string Info = "инфо";
-            string exitWord = "выход";
+            const string SetNameCommand = "имя";
+            const string SetSurnameCommand = "фамилия";
+            const string ShowInfoCommand = "инфо";
+            const string exitCommand = "выход";
+
             string name = "";
             string surname = "";
-            Console.WriteLine("Для выхода напишите выход");
-            Console.WriteLine("Для ввода имени напишите имя");
-            Console.WriteLine("Для фамилии напишите фамилия");
-            Console.WriteLine("Для смены имени напишите смена имени");
-            Console.WriteLine("Для вывода информации напшиите инфо");
+            Console.WriteLine($"Для выхода напишите {exitCommand}");
+            Console.WriteLine($"Для ввода имени напишите {SetNameCommand}");
+            Console.WriteLine($"Для фамилии напишите {SetSurnameCommand}");
+            Console.WriteLine($"Для вывода информации напшиите {ShowInfoCommand}");
             string userInput = "";
 
-            while (userInput != exitWord)
+            while (userInput != exitCommand)
             {
                 userInput = Console.ReadLine();
                 switch (userInput)
                 {
-                    case Name:
+                    case SetNameCommand:
                         Console.WriteLine("Выбор имени");
                         name = Console.ReadLine();
                         break;
-                    case ChangeName:
-                        Console.WriteLine("Введите имя");
-                        name = Console.ReadLine();
-                        break;
-                    case SecondName:
+
+                    case SetSurnameCommand:
                         Console.WriteLine("Введите фамилию");
                         surname = Console.ReadLine();
                         break;
-                    case Info:
+
+                    case ShowInfoCommand:
                         if (name == "" || surname == "")
                         {
                             Console.WriteLine("Вы ввели не все данные о себе");
-                            break;
                         }
                         else
                         {
                             Console.WriteLine(name + " " + surname);
-                            break;
                         }
+                        break;
+
                     default:
-                        Console.WriteLine("Таких команд нет");
+                        Console.WriteLine("-------");
                         break;
                 }
             }
