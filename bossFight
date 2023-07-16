@@ -36,8 +36,7 @@ namespace App
                         currentUserFireDamage *= userDamageMultiplier;
                         isBossInOil = false;
                     }
-
-                    if (isConcentrated == true)
+                    else if (isConcentrated == true)
                     {
                         currentUserFireDamage *= userDamageMultiplier;
                         isConcentrated = false;
@@ -46,13 +45,11 @@ namespace App
                     Console.WriteLine($"Вы нанесли {currentUserFireDamage}");
                     bossHealth -= currentUserFireDamage;
                 }
-
-                if (userInput == oilBall)
+                else if (userInput == oilBall)
                 {
                     isBossInOil = true;
                 }
-
-                if (userInput == concentration)
+                else if (userInput == concentration)
                 {
                     isConcentrated = true;
                 }
@@ -60,6 +57,19 @@ namespace App
                 userHealth -= bossDamage;
 
                 Console.WriteLine($"Ваше здоровье: {userHealth}, здоровье босса: {bossHealth}");
+            }
+
+            if (userHealth == 0 && bossHealth != 0)
+            {
+                Console.WriteLine("Вы проиграли");
+            }
+            else if (bossHealth == 0 && userHealth != 0)
+            {
+                Console.WriteLine("Вы победили");
+            }
+            else
+            {
+                Console.WriteLine("Вы победили ценой своей жизни");
             }
         }
     }
