@@ -10,36 +10,35 @@ namespace App
         {
             string brackets = "(()(()())";
             char openBracket = '(';
-            int bracketsDeep = 0;
-            int maximumBracketsDeep = 0;
+            int currentDepth = 0;
+            int maxDepth = 0;
 
             foreach (var symbol in brackets)
             {
                 if (symbol == openBracket)
                 {
-                    bracketsDeep += 1;
+                    currentDepth += 1;
                 }
-
                 else
                 {
-                    bracketsDeep -= 1;
+                    currentDepth -= 1;
                 }
 
-                if (bracketsDeep > maximumBracketsDeep)
+                if (currentDepth > maxDepth)
                 {
-                    maximumBracketsDeep = bracketsDeep;
+                    maxDepth = currentDepth;
                 }
 
-                if (bracketsDeep < 0)
+                if (currentDepth < 0)
                 {
                     Console.WriteLine("Строка не верна");
                     break;
                 }
             }
 
-            Console.WriteLine("Максимальная вложенность: " + maximumBracketsDeep);
+            Console.WriteLine("Максимальная вложенность: " + maxDepth);
 
-            if (bracketsDeep > 0)
+            if (currentDepth > 0)
             {
                 Console.WriteLine("Строка не верна");
             }
