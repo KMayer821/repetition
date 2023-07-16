@@ -13,6 +13,7 @@ namespace App
             int minimumRandomNumber = 1;
             int maximumRandomNumber = 10;
             int maximumElementOfMatrix = minimumRandomNumber;
+            int elementForChange = 0;
 
             for (int i = 0; i < matrixSize; i++)
             {
@@ -33,6 +34,7 @@ namespace App
                         maximumElementOfMatrix = numbers[i, j];
                     }
                 }
+
                 Console.WriteLine();
             }
 
@@ -44,11 +46,12 @@ namespace App
                 {
                     if (numbers[i, j] == maximumElementOfMatrix)
                     {
-                        numbers[i, j] = 0;
+                        numbers[i, j] = elementForChange;
                     }
 
                     Console.Write(numbers[i, j] + " ");
                 }
+
                 Console.WriteLine();
             }
         }
