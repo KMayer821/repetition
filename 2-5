@@ -9,21 +9,33 @@ namespace App
             const string SetNameCommand = "имя";
             const string SetSurnameCommand = "фамилия";
             const string ShowInfoCommand = "инфо";
-            const string exitCommand = "выход";
+            const string ExitCommand = "выход";
+            const string ChangeTextColorCommand = "сменить цвет";
 
             string name = "";
             string surname = "";
-            Console.WriteLine($"Для выхода напишите {exitCommand}");
+            bool isWorking = true;
+            Console.WriteLine($"Для выхода напишите {ExitCommand}");
             Console.WriteLine($"Для ввода имени напишите {SetNameCommand}");
             Console.WriteLine($"Для фамилии напишите {SetSurnameCommand}");
             Console.WriteLine($"Для вывода информации напшиите {ShowInfoCommand}");
+            Console.WriteLine($"Для смены цвета текста напишите {ChangeTextColorCommand}");
             string userInput = "";
 
-            while (userInput != exitCommand)
+            while (isWorking == true)
             {
                 userInput = Console.ReadLine();
+
                 switch (userInput)
                 {
+                    case ExitCommand:
+                        isWorking = false;
+                        break;
+
+                    case ChangeTextColorCommand:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+
                     case SetNameCommand:
                         Console.WriteLine("Выбор имени");
                         name = Console.ReadLine();
@@ -53,3 +65,4 @@ namespace App
         }
     }
 }
+
