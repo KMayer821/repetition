@@ -1,4 +1,5 @@
 using System;
+using System.IO.IsolatedStorage;
 using System.Security.Claims;
 
 namespace App
@@ -27,26 +28,21 @@ namespace App
 
             for (int i = 0; i < matrixSize; i++)
             {
-                for (int j = 0; j < matrixSize; j++)
-                {
-                    if (i == rowNumber - 1)
-                    {
-                        summResult += numbers[i, j];
-                    }
-                }
+                summResult += numbers[rowNumber - 1, i];
             }
             
             for (int i = 0; i < matrixSize; i++)
             {
+                multiplyResult *= numbers[i ,columnNumber -1];
+            }
+
+            for (int i = 0; i < matrixSize; i++)
+            {
                 for (int j = 0; j < matrixSize; j++)
                 {
-                    if (j == columnNumber - 1)
-                    {
-                        multiplyResult *= numbers[i, j];
-                    }
-
                     Console.Write(numbers[i, j] + " ");
                 }
+
                 Console.WriteLine();
             }
 
