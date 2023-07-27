@@ -1,0 +1,49 @@
+using System;
+using System.Security.Claims;
+
+namespace App
+{
+    internal class Programm
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = new int[] { };
+            string sumCommand = "sum";
+            string exitCommand = "exit";
+            string userInput = "";
+            int sum;
+            int currentNumber = 0;
+            Console.WriteLine("Введите число");
+            Console.WriteLine("Введите sum, для получения суммы введенных чисел");
+            Console.WriteLine("Введите exit для выхода");
+
+            while (userInput != exitCommand)
+            {
+                userInput = Console.ReadLine();
+
+                if (userInput == sumCommand)
+                {
+                    sum = 0;
+
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        sum += numbers[i];
+                    }
+
+                    Console.WriteLine($"Сумма чисел массива: {sum}");
+                }
+                
+                int[] bufferNumbers = new int[numbers.Length + 1];
+                
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    bufferNumbers[i] = numbers[i];
+                }
+
+                int.TryParse(userInput, out currentNumber);
+                bufferNumbers[bufferNumbers.Length - 1] = currentNumber;
+                numbers = bufferNumbers;
+            }
+        }
+    }
+}
