@@ -11,7 +11,7 @@ namespace App
             string sumCommand = "sum";
             string exitCommand = "exit";
             string userInput = "";
-            int sum;
+            bool isNumber = false;
             int currentNumber = 0;
             Console.WriteLine("Введите число");
             Console.WriteLine("Введите sum, для получения суммы введенных чисел");
@@ -20,10 +20,11 @@ namespace App
             while (userInput != exitCommand)
             {
                 userInput = Console.ReadLine();
+                isNumber = int.TryParse(userInput, out currentNumber);
 
                 if (userInput == sumCommand)
                 {
-                    sum = 0;
+                    int sum = 0;
 
                     for (int i = 0; i < numbers.Length; i++)
                     {
@@ -32,17 +33,19 @@ namespace App
 
                     Console.WriteLine($"Сумма чисел массива: {sum}");
                 }
-                
-                int[] bufferNumbers = new int[numbers.Length + 1];
-                
-                for (int i = 0; i < numbers.Length; i++)
+                else if(isNumber == true)
                 {
-                    bufferNumbers[i] = numbers[i];
-                }
+                    int[] bufferNumbers = new int[numbers.Length + 1];
 
-                int.TryParse(userInput, out currentNumber);
-                bufferNumbers[bufferNumbers.Length - 1] = currentNumber;
-                numbers = bufferNumbers;
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        bufferNumbers[i] = numbers[i];
+                    }
+                    
+                    bufferNumbers[bufferNumbers.Length - 1] = currentNumber;
+                    numbers = bufferNumbers;
+                    Console.WriteLine(numbers.Length);
+                }
             }
         }
     }
