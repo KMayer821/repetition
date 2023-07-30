@@ -1,0 +1,41 @@
+using System;
+
+namespace App
+{
+    internal class Shift
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = {1, 2, 3, 4, 5};
+            int bufferNumber;
+            int numberOfShifts;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + "  ");
+            }
+
+            Console.WriteLine("Введите количество сдвигов");
+            int.TryParse(Console.ReadLine(), out numberOfShifts);
+           
+            for (int j =  0; j < numberOfShifts; j++)
+            {
+                bufferNumber = numbers[numbers.Length - 1];
+
+                for (int i = numbers.Length - 1; i > 0; i--)
+                {
+                    numbers[i] = numbers[i - 1];
+                }
+
+                numbers[0] = bufferNumber;
+            }            
+
+            Console.WriteLine();
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.Write(numbers[i] + "  ");
+            }
+        }
+    }
+}
