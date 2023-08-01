@@ -14,8 +14,8 @@ namespace App
             bool isNumber = false;
             int currentNumber = 0;
             Console.WriteLine("Введите число");
-            Console.WriteLine("Введите sum, для получения суммы введенных чисел");
-            Console.WriteLine("Введите exit для выхода");
+            Console.WriteLine($"Введите {sumCommand}, для получения суммы введенных чисел");
+            Console.WriteLine($"Введите {exitCommand} для выхода");
 
             while (userInput != exitCommand)
             {
@@ -33,7 +33,7 @@ namespace App
 
                     Console.WriteLine($"Сумма чисел массива: {sum}");
                 }
-                else if(isNumber == true)
+                else if (isNumber == true)
                 {
                     int[] bufferNumbers = new int[numbers.Length + 1];
 
@@ -41,7 +41,7 @@ namespace App
                     {
                         bufferNumbers[i] = numbers[i];
                     }
-                    
+
                     bufferNumbers[bufferNumbers.Length - 1] = currentNumber;
                     numbers = bufferNumbers;
                     Console.WriteLine(numbers.Length);
