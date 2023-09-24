@@ -6,13 +6,13 @@ namespace App
     {
         static void Main(string[] args)
         {
+            string separator = " ";
             string text = "Мама мыла раму. Рама мыта мамой.";
-            string[] words = text.Split(' ');
+            string[] words = text.Split(separator);
 
             for (int i = 0; i < words.Length; i++)
             {
                 Console.WriteLine(words[i]);
             }
-        }
     }
 }
